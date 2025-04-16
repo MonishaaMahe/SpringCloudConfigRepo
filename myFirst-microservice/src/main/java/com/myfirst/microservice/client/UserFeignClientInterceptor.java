@@ -1,9 +1,9 @@
 package com.myfirst.microservice.client;
 
 import com.myfirst.microservice.security.SecurityUtils;
+import org.springframework.stereotype.Component;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
-import org.springframework.stereotype.Component;
 
 @Component
 public class UserFeignClientInterceptor implements RequestInterceptor {
