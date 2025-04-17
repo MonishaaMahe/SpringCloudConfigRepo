@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  jhipster-config:
+    image: jhipster/jhipster-registry:v7.0.0
+    container_name: jhipster-config
+    ports:
+      - "8761:8761"
+      - "8888:8888"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev,native
+      - SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATIONS=file:/config
+    volumes:
+      - ./central-server-config:/config
+    networks:
+      - jhipster
+
+networks:
+  jhipster:
+    driver: bridge
